@@ -4,8 +4,12 @@
   "description": "prova promises",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "mocha"
   },
   "author": "Mauro Scomparin <scompo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
