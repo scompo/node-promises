@@ -7,21 +7,27 @@ const p3 = new Promise((resolve, reject) => {
 });
 
 const errorHandler = (err) => {
-  console.error('small catch 1');
+  console.error('presumed a network error');
   console.error(err);
   return undefined;
-}
+};
 
-const promises = [p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)];
-
-const getAllData = (promises) => {
-  Promise.all(promises).then((values) => {
-    for (let i = 0; i < values.length; i++) {
-      const value = values[i];
-      console.log(value);
+const handleStuff = (values) => {
+  for (let i = 0; i < values.length; i++) {
+    const value = values[i];
+    if (value) {
+      console.log("returned something: " + i);
+    } else {
+      console.log("returned nothing: " + i);
     }
-  }).catch((err) => {
+  }
+};
+
+const getAllData = (promises, callback) => {
+  Promise.all(promises).then(callback).catch((err) => {
     console.error('big catch');
     console.error(err);
   });
 }
+
+getAllData([p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)], handleStuff);
