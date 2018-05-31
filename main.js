@@ -12,12 +12,16 @@ const errorHandler = (err) => {
   return undefined;
 }
 
-Promise.all([p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)]).then((values) => {
-  for (let i = 0; i < values.length; i++) {
-    const value = values[i];
-    console.log(value);
-  }
-}).catch((err) => {
-  console.error('big catch');
-  console.error(err);
-});
+const promises = [p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)];
+
+const getAllData = (promises) => {
+  Promise.all(promises).then((values) => {
+    for (let i = 0; i < values.length; i++) {
+      const value = values[i];
+      console.log(value);
+    }
+  }).catch((err) => {
+    console.error('big catch');
+    console.error(err);
+  });
+}
