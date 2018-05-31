@@ -1,0 +1,11 @@
+{
+  "name": "prova-promises",
+  "version": "0.1.0",
+  "description": "prova promises",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Mauro Scomparin <scompo@gmail.com>",
+  "license": "MIT"
+}
