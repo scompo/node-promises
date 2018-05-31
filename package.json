@@ -2,6 +2,7 @@
   "name": "prova-promises",
   "version": "0.1.0",
   "description": "prova promises",
+  "repository": "https://github.com/scompo/node-promises.git",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -11,5 +12,9 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
   }
 }
