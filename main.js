@@ -30,4 +30,8 @@ const getAllData = (promises, callback) => {
   });
 }
 
-getAllData([p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)], handleStuff);
+const make3Calls = async () => {
+  getAllData([p1.catch(errorHandler), p2.catch(errorHandler), p3.catch(errorHandler)], handleStuff);
+};
+
+make3Calls();
