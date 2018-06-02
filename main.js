@@ -1,7 +1,7 @@
-const rp = require('request-promise-native');
+const fetch = require('node-fetch');
 
-const p1 = rp('http://scompo.altervista.org');
-const p2 = Promise.reject(new Error("fail"));
+const p1 = fetch('http://scompo.altervista.org');
+const p2 = Promise.reject(new Error("I wanted this to fail!!"));
 const p3 = new Promise((resolve, reject) => {
   setTimeout(resolve, 3000, 'with a delay');
 });
